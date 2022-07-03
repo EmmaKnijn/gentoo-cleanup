@@ -1,10 +1,11 @@
 # System update
 
 emaint --auto sync
-emerge --ask --verbose --update --deep --newuse @world
+emerge --verbose --update --deep --newuse @world
 
-rm /var/tmp/portage/*
-rm /var/cache/distfiles/*
-rm /var/cache/binpkgs/*
-emerge --ask app-admin/eclean-kernel
-eclean-dist
+rm -rf /var/tmp/portage/*
+rm -rf /var/cache/distfiles/*
+rm -rf /var/cache/binpkgs/*
+#emerge app-admin/eclean-kernel
+
+eclean-dist # Requires app-portage/gentoolkit
